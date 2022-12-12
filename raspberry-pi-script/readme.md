@@ -1,38 +1,42 @@
-![azure1](https://user-images.githubusercontent.com/88910492/206944405-e82cd1a2-2642-4616-92d8-3cfe99223758.png)
-
-This github readme describes and documents the Azure function part of my project which gets the information from [Openweathermap API](https://api.openweathermap.org), parses the relevant data and stores the results in cosmosDB. This data is then used by PowerBI to visualize the data. This readme does not contain any documentation for the PowerBI part.
+This github project describes the Device code for a Raspberry Pi using senseHAT. The code gathers the sensor data from the senseHAT and sends them to the Azure IoT Hub using MQTT. The data is then stored to a cosmosDB NoSQL database where it can be used to visualize the data. 
 
 # Table of Contents
-- [Overview](https://github.com/Kotik112/Azure-timerTrigger-function/new/master?readme=1#azure-function-for-openweathermap-api)
-- [Dependencies](https://github.com/Kotik112/Azure-timerTrigger-function/new/master?readme=1#dependencies)
-- [Inputs](https://github.com/Kotik112/Azure-timerTrigger-function/new/master?readme=1#inputs)
-- [Outputs](https://github.com/Kotik112/Azure-timerTrigger-function/new/master?readme=1#outputs)
-- [Error Handling](https://github.com/Kotik112/Azure-timerTrigger-function/new/master?readme=1#error-handling)
+- [Overview](https://github.com/Kotik112/D2C-demo/new/master?readme=1#raspberry-pi-and-sensehat-data-monitoring)
+- [Hardware Used](https://github.com/Kotik112/D2C-demo/new/master?readme=1#hardware-used)
+- [Python script](https://github.com/Kotik112/D2C-demo/new/master?readme=1#python-script)
+- [Running the script](https://github.com/Kotik112/D2C-demo/new/master?readme=1#running-the-script)
 
-# Azure Function for OpenWeatherMap API
-This Azure function is triggered by a timer and makes an API call to the OpenWeatherMap API to get the current weather data for a specific location. It then extracts the temperature, humidity, and pressure data and writes it to an output binding.
+# Raspberry Pi and SenseHat Data Monitoring
+This project uses a Raspberry Pi and a SenseHat to monitor temperature, humidity, and pressure data. The data is then sent to an Azure IoT Hub at a regular interval.
 
-### Dependencies
-This function depends on the following libraries:
+## Hardware Used
+![image](https://user-images.githubusercontent.com/88910492/206953219-2890d18d-fc53-4403-8906-6c0f54e26dce.png)
 
-- `datetime`: Used to extract and format the date/time data from the API response.
-- `logging`: Used to log information and error messages.
-- `requests`: Used to make the API call to the OpenWeatherMap API.
-- `time`: Used to convert the date/time data to a Unix timestamp.
+- `Raspberry Pi`: A series of small single-board computers developed in the United Kingdom by the Raspberry Pi Foundation to promote teaching of basic computer science in schools and in developing countries.
+- `SenseHat`: An add-on board for the Raspberry Pi, featuring an 8x8 RGB LED matrix, a five-button joystick and a variety of sensors, including an accelerometer, gyroscope and magnetometer.
 
-### Inputs
-The function takes two inputs:
+## Python Script
+The `sense-hat-script.py` script does the following:
 
-- `mytimer`: A timer trigger that specifies when the function should be executed.
-- `outdoc`: An output binding that specifies where the data from the API call should be written to.
+#### Import the required modules: 
+```
+import sense_hat
+import azure.iot.device.aio
+import time
+```
+- Define an `INTERVAL` constant, which determines how often the data is sent to the IoT Hub (in seconds). In this project I had it set to 180 seconds.
+- Define a `SenseHatManager` class, which provides methods to retrieve the temperature, humidity, and pressure data from the SenseHat.
+- Define a `MessagingClient` class, which uses the SenseHatManager to get the data and then sends it to the IoT Hub using the azure.iot.device.aio module.
+- Define the main function, which creates an instance of the MessagingClient and then runs it in an asynchronous loop, sending the data to the IoT Hub at the specified interval.
 
-### Outputs
-The function writes the extracted weather data to the specified output binding as a JSON document with the following fields:
+## Running the Script
+To run the script, you need to have `Python 3` installed on your Raspberry Pi, along with the sense_hat and azure-iot-device modules. You also need to have an Azure IoT Hub set up and have the connection string for your device.
 
-- `temp`: The current temperature in Celsius.
-- `humidity`: The current humidity level in percent.
-- `pressure`: The current pressure in millibars.
-- `datetime`: The date and time when the data was collected, in Unix timestamp format.
+Once you have all of these, you can run the script by using the following command:
 
-### Error Handling
-If there is an error while making the API call or writing the data to the output binding, the function will log the error message and continue execution.
+## Copy code
+```
+python3 sense-hat-script.py
+```
+- The script will run indefinitely, sending the data to the IoT Hub at the specified interval. You can stop the script by pressing CTRL+C.
+- The script can also be [run as a script](https://gist.github.com/emxsys/a507f3cad928e66f6410e7ac28e2990f) on Raspberry Pi's linux operating system.
