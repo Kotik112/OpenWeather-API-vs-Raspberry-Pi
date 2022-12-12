@@ -1,0 +1,20 @@
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "name": "mytimer",
+      "type": "timerTrigger",
+      "direction": "in",
+      "schedule": "*/5 * * * *"
+    },
+    {
+      "direction": "out",
+      "type": "cosmosDB",
+      "name": "outdoc",
+      "databaseName": "weather_data_db",
+      "collectionName": "weather_data",
+      "connectionStringSetting": "AzureCosmosDbString",
+      "createIfNotExists": true
+    }
+  ]
+}
