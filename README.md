@@ -37,6 +37,7 @@ The hardware setup for this project involves using a `Raspberry Pi` with a `Sens
 - Set up the necessary tables and collections in CosmosDB to store the data.
 - Monitor the data as it is sent to and stored in Azure.
 
+# Security concerns and improvements:
 
 ## License
 This project is licensed under the MIT License.
