@@ -48,7 +48,7 @@ SELECT
     humidity,
     pressure
 INTO
-    [sensor-data-input]
+    [cosmosdb_input]
 FROM
     [iothub-output]
 WHERE
@@ -91,7 +91,7 @@ Many different types of visualizations can be made out of the data from the two 
   - Azure Security Center: Azure Security Center is a service that provides centralized visibility and control over the security of your Azure resources. You can use Security Center to assess the security of your IoT solution, and to monitor and protect against threats.
 
 ## Issues:
-I had issues with the senseHAT's temperature sensor reading way too high temperatures. It shows the room temperature, sometimes as high as 38 C. This is obviously faulty readings. Due to a lack of a secondary sensor I had to make do with what I had. My theory is that the senseHAT sits so close to the Raspberry Pi's processor that it contributes to the high temperature readings.
+I had issues with the senseHAT's temperature sensor reading way too high temperatures. It shows the room temperature, sometimes as high as 38 C. This is obviously faulty readings. Due to a lack of a secondary sensor, I had to make do with what I had. My theory is that the senseHAT sits so close to the Raspberry Pi's processor that it contributes to the high temperature readings.
 
 ## License
 This project is licensed under the MIT License.
