@@ -30,7 +30,7 @@ import time
 - Define a `MessagingClient` class, which uses the SenseHatManager to get the data and then sends it to the IoT Hub using the azure.iot.device.aio module.
 - Define the main function, which creates an instance of the MessagingClient and then runs it in an asynchronous loop, sending the data to the IoT Hub at the specified interval.
 
-## Creating an `env_secrets.py`
+## Creating an `env_secrets.py` (For safety)
 To protect your "Primary connection string" from being compromised and ensuring the security of the IoT system, create a file alongside your python script called `env_secrets.py` that contains your connection string. Make sure to add your env_secrets.py to .gitignore to avoid the connection string getting uploaded to Github and potentially compromising the security of the entire system.
 ![azure-secret](https://user-images.githubusercontent.com/88910492/207057895-aa996180-6c4a-4003-b2e1-2858d28b8794.png)
 
