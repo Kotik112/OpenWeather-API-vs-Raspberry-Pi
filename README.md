@@ -8,10 +8,13 @@ The project will involve setting up a Raspberry Pi with a Sense HAT, configuring
 Once the project is set up, we will be able to monitor the data as it is collected and stored in Azure. We can then use this data to compare the weather data from the OpenWeather API with the data collected by the Raspberry Pi. This will allow us to gain insights about the environment and the accuracy of the weather data.
 
 ## Table of Contents:
-- Hardware Setup
-- Prerequisites
-- Getting started
-- License
+- [Hardware Setup](https://github.com/Kotik112/OpenWeather-API-vs-Raspberry-Pi/edit/master/README.md#prerequisites)
+- [Prerequisites](https://github.com/Kotik112/OpenWeather-API-vs-Raspberry-Pi/edit/master/README.md#prerequisites)
+- [Getting started](https://github.com/Kotik112/OpenWeather-API-vs-Raspberry-Pi/edit/master/README.md#getting-started)
+- [Result / Output](https://github.com/Kotik112/OpenWeather-API-vs-Raspberry-Pi/edit/master/README.md#result--output)
+- [Scalability](https://github.com/Kotik112/OpenWeather-API-vs-Raspberry-Pi/edit/master/README.md#scalability)
+- [Security concerns](https://github.com/Kotik112/OpenWeather-API-vs-Raspberry-Pi/edit/master/README.md#security-concerns-and-improvements)
+- [License](https://github.com/Kotik112/OpenWeather-API-vs-Raspberry-Pi/edit/master/README.md#license)
 
 ## Hardware Setup
 ![image](https://user-images.githubusercontent.com/88910492/207051605-f3dbafa1-f166-432c-afb0-702207988a7b.png)
@@ -37,7 +40,25 @@ The hardware setup for this project involves using a `Raspberry Pi` with a `Sens
 - Set up the necessary tables and collections in CosmosDB to store the data.
 - Monitor the data as it is sent to and stored in Azure.
 
-# Security concerns and improvements:
+## Result / Output:
+![powerbi](https://user-images.githubusercontent.com/88910492/207239087-dd5ce9dc-2206-490a-866b-80d3a0c1cdc0.png)
+Many different types of visualizations can be made out of the data from the two cosmosDB databses. I simply decided to visualize a side by side graph view of the data from each individual database. More than two databases and multiple tables can be imported in this way to aggregate and visualize datasets.
+
+
+## Scalability:
+- The project uses Azure Storage (Cold path) to store the processed data for further analysis and reporting. This allows the system to scale up or down the storage capacity as needed to handle the data volume.
+- The project uses Azure Stream Analytics to process the data in real-time, performing tasks such as aggregation, filtering, and triggering alerts. This allows you to scale up or down the number of stream analytics jobs as needed to handle the data volume.
+
+## Security concerns and improvements:
+#### Certificates over Primary Connection Strings
+1. In this project I use `Primary Connection String` to connect the IoT device (Raspberry Pi) to the Azure IoT hub. This method of authenticating devices is meant for legacy hardware that do not support certificates. It is recommended to use certificates over connection strings for the following reasons:
+- Connecting to an IoT device through a certificate rather than a primary connection string can provide a number of security benefits. First, using a certificate allows for mutual authentication between the device and the IoT hub, meaning that both the device and the hub can verify each other's identity. This can help to prevent man-in-the-middle attacks, where an attacker intercepts communication between the device and the hub and tries to impersonate one of the two parties.
+
+- Another benefit of using certificates is that they can be easily revoked if they are lost or stolen. This is especially important in the case of IoT devices, which may be deployed in remote or inaccessible locations. With a primary connection string, revoking access can be more difficult, as it typically involves changing the connection string on both the device and the IoT hub.
+
+
+2. Encrypt your data: Encrypting your data both in transit and at rest can help to protect it from being accessed by unauthorized parties.
+- This is particularly useful if the data being sent is sensitive.
 
 ## License
 This project is licensed under the MIT License.
