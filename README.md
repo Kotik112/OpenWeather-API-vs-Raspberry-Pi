@@ -24,8 +24,7 @@ Once the project is set up, we will be able to monitor the data as it is collect
 The hardware setup for this project involves using a `Raspberry Pi` with a `Sense HAT` attached to it. The Sense HAT is a small add-on board that allows the Raspberry Pi to sense the environment, including temperature, humidity, and air pressure.
 
 ## Prerequisites
-- [Raspberry Pi](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/)
-- [Sense HAT](https://pythonhosted.org/sense-hat/)
+- IoT Device with sensors (Raspberry pi, Arduino, ESP32 etc)
 - Azure subscription <img src="https://user-images.githubusercontent.com/88910492/207051831-c6e9d37f-3d1d-4488-80dc-22f5d2428e74.png" width="30">
   - Azure IoT Hub
   - Azure Stream Analytics
