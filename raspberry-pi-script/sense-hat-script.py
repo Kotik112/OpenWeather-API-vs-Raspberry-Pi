@@ -57,7 +57,8 @@ class SenseHatManager:
 class MessagingClient:
     def __init__(self):
         self.sense_hat_manager = SenseHatManager()
-        # Retrieves the IoT Hub connection string from the environment variables. See env_secrets.py
+        # Retrieves the IoT Hub connection string from the environment variables.
+        # # See "Creating env_secrets.py" in the README.md (on Github) for more information.
         self.CONNECTION_STRING = connection_string
         self.client = IoTHubDeviceClient.create_from_connection_string(self.CONNECTION_STRING)
         asyncio.run(self.client.connect(mqtt_pipeline=True))
