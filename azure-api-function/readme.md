@@ -16,9 +16,7 @@ This Azure function is triggered by a timer and makes an API call to the OpenWea
 This function depends on the following libraries:
 
 - `datetime`: Used to extract and format the date/time data from the API response.
-- `logging`: Used to log information and error messages.
 - `requests`: Used to make the API call to the OpenWeatherMap API.
-- `time`: Used to convert the date/time data to a Unix timestamp.
 
 ## Inputs
 The function takes two inputs:
