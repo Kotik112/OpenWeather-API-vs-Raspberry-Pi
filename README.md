@@ -37,6 +37,29 @@ The hardware setup for this project involves using a `Raspberry Pi` with a `Sens
 - [Set up (Swedish)](https://azure.microsoft.com/sv-se/?&ef_id=CjwKCAiAv9ucBhBXEiwA6N8nYMv_PFgsW9RxByXOQ4F3EqaJOEccaQgXZBBLujLvCmu0UMn0lhZNmxoCXbQQAvD_BwE:G:s&OCID=AIDcmmtops7fz5_SEM_CjwKCAiAv9ucBhBXEiwA6N8nYMv_PFgsW9RxByXOQ4F3EqaJOEccaQgXZBBLujLvCmu0UMn0lhZNmxoCXbQQAvD_BwE:G:s&gclid=CjwKCAiAv9ucBhBXEiwA6N8nYMv_PFgsW9RxByXOQ4F3EqaJOEccaQgXZBBLujLvCmu0UMn0lhZNmxoCXbQQAvD_BwE) your Azure subscription and create an Azure IoT Hub.
 - Connect your Raspberry Pi to the IoT Hub and configure it to send temperature, humidity, and air pressure data. Refer to my [github python script](https://github.com/Kotik112/OpenWeather-API-vs-Raspberry-Pi/tree/master/raspberry-pi-script)
 - Create an Azure Stream Analytics job to parse the data from the IoT Hub and send it to both Blob storage and CosmosDB.
+```
+/* Query output for Azure Stream Analytics) */
+/* Save temperature and date to sensor_data_db (NoSQL) */
+SELECT
+    dt as 'datetime',
+    temperature,
+    humidity,
+    pressure
+INTO
+    [sensor-data-input]
+FROM
+    [iothub-output]
+WHERE
+    temperature is not null
+
+/* Save everything (including meta data) to Blob storage */
+SELECT
+    *
+INTO
+    [blob-input]
+FROM
+    [iothub-output]
+```
 - Set up the necessary tables and collections in CosmosDB to store the data.
 - Monitor the data as it is sent to and stored in Azure.
 
