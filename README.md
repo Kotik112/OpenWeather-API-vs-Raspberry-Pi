@@ -81,9 +81,14 @@ Many different types of visualizations can be made out of the data from the two 
 
 - Another benefit of using certificates is that they can be easily revoked if they are lost or stolen. This is especially important in the case of IoT devices, which may be deployed in remote or inaccessible locations. With a primary connection string, revoking access can be more difficult, as it typically involves changing the connection string on both the device and the IoT hub.
 
+- Making use of the following Azure services (Not part of student subscription):
+  - Azure Key Vault: Azure Key Vault is a service that allows you to securely store and manage cryptographic keys, certificates, and other secrets. This can be useful for storing the security tokens or certificates that are used to authenticate devices in your IoT solution.
 
-2. Encrypt your data: Encrypting your data both in transit and at rest can help to protect it from being accessed by unauthorized parties.
-- This is particularly useful if the data being sent is sensitive.
+  - Azure Active Directory: Azure Active Directory (Azure AD) is a cloud-based identity and access management service. You can use Azure AD to manage the identities of users and devices in your IoT solution, and to control access to the IoT hub and other Azure services.
+
+  - Azure Sentinel: Azure Sentinel is a cloud-native security information and event management (SIEM) service. You can use Azure Sentinel to monitor your IoT solution for security threats and anomalies, and to respond to incidents in real time.
+
+  - Azure Security Center: Azure Security Center is a service that provides centralized visibility and control over the security of your Azure resources. You can use Security Center to assess the security of your IoT solution, and to monitor and protect against threats.
 
 ## Issues:
 I had issues with the senseHAT's temperature sensor reading way too high temperatures. It shows the room temperature, sometimes as high as 38 C. This is obviously faulty readings. Due to a lack of a secondary sensor I had to make do with what I had. My theory is that the senseHAT sits so close to the Raspberry Pi's processor that it contributes to the high temperature readings.
