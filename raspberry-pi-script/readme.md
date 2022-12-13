@@ -3,6 +3,7 @@ This github project describes the Device code for a Raspberry Pi using senseHAT.
 # Table of Contents
 - [Overview](https://github.com/Kotik112/D2C-demo/new/master?readme=1#raspberry-pi-and-sensehat-data-monitoring)
 - [Hardware Used](https://github.com/Kotik112/D2C-demo/new/master?readme=1#hardware-used)
+- Creating env_secrets.py
 - [Python script](https://github.com/Kotik112/D2C-demo/new/master?readme=1#python-script)
 - [Running the script](https://github.com/Kotik112/D2C-demo/new/master?readme=1#running-the-script)
 
@@ -29,6 +30,11 @@ import time
 - Define a `MessagingClient` class, which uses the SenseHatManager to get the data and then sends it to the IoT Hub using the azure.iot.device.aio module.
 - Define the main function, which creates an instance of the MessagingClient and then runs it in an asynchronous loop, sending the data to the IoT Hub at the specified interval.
 
+## Creating an `env_secrets.py`
+To protect your "Primary connection string" from being compromised and ensuring the security of the IoT system, create a file alongside your python script called `env_secrets.py` that contains your connection string. Make sure to add your env_secrets.py to .gitignore to avoid the connection string getting uploaded to Github and potentially compromising the security of the entire system.
+![azure-secret](https://user-images.githubusercontent.com/88910492/207057895-aa996180-6c4a-4003-b2e1-2858d28b8794.png)
+
+
 ## Running the Script
 To run the script, you need to have `Python 3` installed on your Raspberry Pi, along with the sense_hat and azure-iot-device modules. You also need to have an Azure IoT Hub set up and have the connection string for your device.
 
@@ -40,3 +46,5 @@ python3 sense-hat-script.py
 ```
 - The script will run indefinitely, sending the data to the IoT Hub at the specified interval. You can stop the script by pressing CTRL+C.
 - The script can also be [run as a script](https://gist.github.com/emxsys/a507f3cad928e66f6410e7ac28e2990f) on Raspberry Pi's linux operating system.
+
+
