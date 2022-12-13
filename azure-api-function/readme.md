@@ -15,7 +15,7 @@ This Azure function is triggered by a timer and makes an API call to the OpenWea
 ## Dependencies
 This function depends on the following libraries and need to added to `requirements.txt`:
 
-- `datetime`: Used to extract and format the date/time data from the API response.
+- `azure-functions`: The azure-functions Python library allows developers to write and deploy Azure Functions using Python. It provides tools and abstractions for managing the underlying computing resources and integrating with other Azure services.
 - `requests`: Used to make the API call to the OpenWeatherMap API.
 
 ## Inputs
