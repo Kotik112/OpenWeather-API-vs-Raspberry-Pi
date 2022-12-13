@@ -12,7 +12,7 @@ This github readme describes and documents the Azure function part of my project
 # Azure Function for OpenWeatherMap API
 This Azure function is triggered by a timer and makes an API call to the OpenWeatherMap API to get the current weather data for a specific location. It then extracts the temperature, humidity, and pressure data and writes it to an output binding.
 
-### Dependencies
+## Dependencies
 This function depends on the following libraries:
 
 - `datetime`: Used to extract and format the date/time data from the API response.
@@ -20,14 +20,14 @@ This function depends on the following libraries:
 - `requests`: Used to make the API call to the OpenWeatherMap API.
 - `time`: Used to convert the date/time data to a Unix timestamp.
 
-### Inputs
+## Inputs
 The function takes two inputs:
 
 - `mytimer`: A timer trigger that specifies when the function should be executed.
   - For this project I set the execution interval to 3 minutes by specifying the cronjob timer "*/3 * * * *"
 - `outdoc`: An output binding that specifies where the data from the API call should be written to.
 
-### Outputs
+## Outputs
 The function writes the extracted weather data to the specified output binding as a JSON document with the following fields:
 
 - `temp`: The current temperature in Celsius.
@@ -35,5 +35,12 @@ The function writes the extracted weather data to the specified output binding a
 - `pressure`: The current pressure in millibars.
 - `datetime`: The date and time when the data was collected, in Unix timestamp format.
 
-### Error Handling
+## Error Handling
 If there is an error while making the API call or writing the data to the output binding, the function will log the error message and continue execution.
+
+## Troubleshooting
+If the Azure function seems to work while it's running in `debug mode` (locally) and then complains about the `AzureCosmosDbString`, this is because when you are running the function locally, the function grabs the necessary environment variables from your `local.settings.json`. However, to run youu function in Azure cloud, you need to add the `AzureCosmosDbString` to your Azure function's `Application Settings`.
+![azure-func](https://user-images.githubusercontent.com/88910492/207276474-ced494b2-596a-4e2c-9df9-6d6317d9dc97.png)
+
+You can also add this from the Azure function extention to VS code.
+![azure-secret](https://user-images.githubusercontent.com/88910492/207276878-2892f2b2-33ca-4036-aaf8-18ac3372b167.png)
