@@ -33,7 +33,7 @@ The hardware setup for this project involves using a `Raspberry Pi` with a `Sens
   - Azure CosmosDB NoSQL x2 (I created 2 databases to replicate a case where data is coming from two independent sources)
   - Azure timerTrigger function (Refer to my [Azure function github](https://github.com/Kotik112/OpenWeather-API-vs-Raspberry-Pi/tree/master/azure-api-function))
   - PowerBI license to visualize data from the databses. I used the 60 day free trial for my project.
-- Valid key to an API that could provide you with local weather conditions. I used [OpenWeatherMap API](https://openweathermap.org/current) for its ease of use and because it offers the data I needed for free.
+- Valid key to an API that could provide you with local weather conditions. I used [OpenWeatherMap API](https://openweathermap.org/current) for its ease of use and because it offered all the data I required, and it's free!
 
 ## Getting Started
 - [Set up (Swedish)](https://azure.microsoft.com/sv-se/?&ef_id=CjwKCAiAv9ucBhBXEiwA6N8nYMv_PFgsW9RxByXOQ4F3EqaJOEccaQgXZBBLujLvCmu0UMn0lhZNmxoCXbQQAvD_BwE:G:s&OCID=AIDcmmtops7fz5_SEM_CjwKCAiAv9ucBhBXEiwA6N8nYMv_PFgsW9RxByXOQ4F3EqaJOEccaQgXZBBLujLvCmu0UMn0lhZNmxoCXbQQAvD_BwE:G:s&gclid=CjwKCAiAv9ucBhBXEiwA6N8nYMv_PFgsW9RxByXOQ4F3EqaJOEccaQgXZBBLujLvCmu0UMn0lhZNmxoCXbQQAvD_BwE) your Azure subscription and create an Azure IoT Hub.
