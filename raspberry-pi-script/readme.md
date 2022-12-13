@@ -40,7 +40,6 @@ To run the script, you need to have `Python 3` installed on your Raspberry Pi, a
 
 Once you have all of these, you can run the script by using the following command:
 
-## Copy code
 ```
 python3 sense-hat-script.py
 ```
