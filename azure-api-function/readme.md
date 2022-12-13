@@ -42,5 +42,5 @@ If there is an error while making the API call or writing the data to the output
 If the Azure function seems to work while it's running in `debug mode` (locally) and then complains about the `AzureCosmosDbString`, this is because when you are running the function locally, the function grabs the necessary environment variables from your `local.settings.json`. However, to run youu function in Azure cloud, you need to add the `AzureCosmosDbString` to your Azure function's `Application Settings`.
 ![azure-func](https://user-images.githubusercontent.com/88910492/207276474-ced494b2-596a-4e2c-9df9-6d6317d9dc97.png)
 
-You can also add this from the Azure function extention to VS code.
-![azure-secret](https://user-images.githubusercontent.com/88910492/207276878-2892f2b2-33ca-4036-aaf8-18ac3372b167.png)
+You can also add this from the [Azure function](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions) extention to VS code by Adding a new string or uploading your local settings.
+![azure-func2](https://user-images.githubusercontent.com/88910492/207277113-e7673450-65c8-4f70-ae90-41d3d596144a.png)
