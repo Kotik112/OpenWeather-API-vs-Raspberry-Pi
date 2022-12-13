@@ -13,7 +13,7 @@ This github readme describes and documents the Azure function part of my project
 This Azure function is triggered by a timer and makes an API call to the OpenWeatherMap API to get the current weather data for a specific location. It then extracts the temperature, humidity, and pressure data and writes it to an output binding.
 
 ## Dependencies
-This function depends on the following libraries:
+This function depends on the following libraries and need to added to `requirements.txt`:
 
 - `datetime`: Used to extract and format the date/time data from the API response.
 - `requests`: Used to make the API call to the OpenWeatherMap API.
