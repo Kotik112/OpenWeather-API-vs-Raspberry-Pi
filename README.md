@@ -85,5 +85,8 @@ Many different types of visualizations can be made out of the data from the two 
 2. Encrypt your data: Encrypting your data both in transit and at rest can help to protect it from being accessed by unauthorized parties.
 - This is particularly useful if the data being sent is sensitive.
 
+## Issues:
+I had issues with the senseHAT's temperature sensor reading way too high temperatures. It shows the room temperature, sometimes as high as 38 C. This is obviously faulty readings. Due to a lack of a secondary sensor I had to make do with what I had. My theory is that the senseHAT sits so close to the Raspberry Pi's processor that it contributes to the high temperature readings.
+
 ## License
 This project is licensed under the MIT License.
