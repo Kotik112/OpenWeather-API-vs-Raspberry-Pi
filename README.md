@@ -8,7 +8,7 @@ The project will involve setting up a Raspberry Pi with a Sense HAT, configuring
 Once the project is set up, we will be able to monitor the data as it is collected and stored in Azure. We can then use this data to compare the weather data from the OpenWeather API with the data collected by the Raspberry Pi. This will allow us to gain insights about the environment and the accuracy of the weather data.
 
 ## Table of Contents:
-- [Hardware Setup](https://github.com/Kotik112/OpenWeather-API-vs-Raspberry-Pi/edit/master/README.md#prerequisites)
+- [Hardware Setup](https://github.com/Kotik112/OpenWeather-API-vs-Raspberry-Pi/edit/master/README.md#hardware-setup)
 - [Prerequisites](https://github.com/Kotik112/OpenWeather-API-vs-Raspberry-Pi/edit/master/README.md#prerequisites)
 - [Getting started](https://github.com/Kotik112/OpenWeather-API-vs-Raspberry-Pi/edit/master/README.md#getting-started)
 - [Result / Output](https://github.com/Kotik112/OpenWeather-API-vs-Raspberry-Pi/edit/master/README.md#result--output)
