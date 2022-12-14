@@ -1,6 +1,6 @@
 ![azure-complete](https://user-images.githubusercontent.com/88910492/207046391-0d5e708d-b7c0-4ed6-8b46-4af925823c76.png)
 
-# Azure cloud architecture for gather weather data from IoT and API
+# Azure cloud architecture for gathering weather data from IoT and API
 The goal of this project is to use a Raspberry Pi with a Sense HAT attached to it to collect temperature, humidity, and air pressure data from the environment. This data will be sent to Azure IoT Hub and processed by Azure Stream Analytics. In addition to the data from the Raspberry Pi, the project will also gather weather data from the OpenWeather API and compare it to the data collected by the Raspberry Pi.
 
 The project will involve setting up a Raspberry Pi with a Sense HAT, configuring it to send data to the IoT Hub, creating an Azure Stream Analytics job to parse the data and store it in Azure, and setting up the necessary tables and collections in CosmosDB to store the data. The project will also involve obtaining an API key from OpenWeather and using it to retrieve weather data for the location of the Raspberry Pi.
