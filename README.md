@@ -93,6 +93,3 @@ Many different types of visualizations can be made out of the data from the two 
 - Faulty temperature readings: I had issues with the senseHAT's temperature sensor reading way too high temperatures. It shows the room temperature, sometimes as high as 38 C. This is obviously faulty readings. Due to a lack of a secondary sensor, I had to make do with what I had. My theory is that the senseHAT sits so close to the Raspberry Pi's processor that it contributes to the high temperature readings.
 
 - Cost: Although I used Azure Student Subscription for this project, I was not able to fully see it to completion without adding extra costs to my account. Luckily Azure Student Subscription includes $100 worth of credits to spend. I had to pay for the second cosmosDB, for the Stream Analytics work and for my azure function whenever it is triggered. I managed to complete and have parts project running for about 1-2 weeks and managed everything for around $50. PLEASE BE CAREFUL ABOUT YOUR SPENDINGS IN THE CLOUD! It's not cheap folks!
-
-## License
-This project is licensed under the MIT License.
