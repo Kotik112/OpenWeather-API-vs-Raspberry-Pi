@@ -25,7 +25,7 @@ The hardware setup for this project involves using a `Raspberry Pi` with a `Sens
 
 ## Prerequisites
 - IoT Device with sensors (Raspberry pi, Arduino, ESP32 etc)
-- Azure subscription <img src="https://user-images.githubusercontent.com/88910492/207051831-c6e9d37f-3d1d-4488-80dc-22f5d2428e74.png" width="30">
+- Azure subscription
   - Azure IoT Hub
   - Azure Stream Analytics
   - Azure Blob storage
